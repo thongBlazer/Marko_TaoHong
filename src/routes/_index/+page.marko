@@ -1,29 +1,211 @@
-<div.container>
-  <header>
-    <img.logo src="./logo.svg" alt="Marko"/>
-  </header>
-  <main>
-    <p>Edit <code>./src/routes/_index/+page.marko</code> and save to reload.</p>
-    <a href="https://markojs.com/docs/getting-started">
-      Learn Marko
-    </a>
-  </main>
-</div>
-<mouse-mask/>
+<div class="container">
+        <div class="banner">
+           <div class="icon">
+              <i class="fas fa-handshake"></i>
+          </div>
+          <div class="banner-content">
+            <div class="timer">
+                <timer target-date="2024-12-31T23:59:59"/>
+            </div>
+            <h3>Allstate Extended Vehicle Care</h3>
+            <h1>Protection that <span class="highlight">extends beyond your warranty</span></h1>
+          </div>
+        </div>
+        <div class="flex-wrapper">
+            <div class="content">
+                <div class="first-item">
+                    <h3>Allstate Extended Vehicle Care</h3>
+                    <p>For as little as $19/mo, we'll pay for repairs after your manufacturer's warranty expires</p>
+                </div>
+                <div class="items">
+                    <div class="item-row">
+                        <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="item">
+                            <h3>Affordable Protection Plans</h3>
+                            <p>Save up to 50% when you buy from Allstate</p>
+                        </div>
+                    </div>
+                    <div class="item-row">
+                        <div class="icon"><i class="fas fa-car-battery"></i></div>
+                        <div class="item">
+                            <h3>100% of covered repair costs</h3>
+                            <p>Covers repairs and transmission.</p>
+                        </div>
+                    </div>
+                    <div class="item-row">
+                        <div class="icon"><i class="fas fa-location-arrow"></i></div>
+                        <div class="item">
+                            <h3>Repair Anywhere</h3>
+                            <p>For as little as $19/mo, we'll pay for repairs after your manufacturer's warranty expires</p>
+                        </div>
+                    </div>
+              </div>
+            </div>
+            <div class="form">
+                <h2>Get a Free Quote</h2>
+                <form>
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName"/>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName"/>
+                    </div>
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"/>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkbox1" name="checkbox1"/>
+                        <label for="checkbox1">My vehicle is a model year 2017 or newer</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="checkbox2" name="checkbox2"/>
+                        <label for="checkbox2">My vehicle has less than 100,000 miles</label>
+                    </div>
+                    <div>
+                        <button type="submit">Learn More</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 style {
-  .container {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: clamp(1em, 2vw, 2em); 
-    padding: 1em;
-    box-sizing: border-box;
-    height:100%;
-    width:100%;
-  }
-  img.logo {
-    width:12em;
-  }
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        .banner, .flex-wrapper {
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .banner {
+            background-color: #002d62;
+            color: white;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        .banner .highlight {
+            color: #70c3ff; /* 蓝色 */
+        }
+        .banner .icon {
+            font-size: 48px; /* 放大一倍 */
+            margin-right: 20px;
+            color: white;
+            align-self: flex-start; /* 向上对齐 */
+        }
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #70c3ff;
+        }
+        .flex-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .content, .form {
+            background-color: #fff;
+            flex: 1 1 48%;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .form{
+          background-color: #002d62;
+          color: white;
+        }
+        .first-item {
+            background-color: #0046ad; /* 修改背景颜色 */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .first-item h3 {
+            color: #70c3ff; /* 标题颜色 */
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+        .first-item p {
+            color: white; /* 副标题颜色 */
+            margin: 0;
+        }
+        .items {
+            display: flex;
+            flex-direction: column;
+        }
+        .items .item-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .items .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #0056b3;
+            flex-shrink: 0;
+        }
+        .items .item {
+            background-color: #fff; /* 设置背景颜色为白色 */
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+        }
+        .item h3 {
+            color: #002d62;
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+        .item p {
+            color: #333;
+            margin: 0;
+        }
+        .form h2 {
+            font-size: 24px;
+        }
+        .form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form input[type="text"],
+        .form input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form button {
+            background-color: #ff7e1a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        @media (max-width: 599px) {
+            .content, .form {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+            .flex-wrapper {
+                flex-direction: column;
+            }
+        }
 }

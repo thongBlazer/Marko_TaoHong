@@ -1,0 +1,45 @@
+<div.timer>
+    <div>
+        <span>${state.hours}h </span>
+        <span>${state.minutes}m </span>
+        <span>${state.seconds}s</span>
+    </div>
+</div.timer>
+
+class {
+    // 初始化，避免typeError
+    onCreate() {
+        this.state = {
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+    }
+
+    onMount() {
+        this.updateTimer();
+        this.interval = setInterval(() => {
+            this.updateTimer();
+        }, 1000);
+    }
+
+    onDestroy() {
+        clearInterval(this.interval);
+    }
+
+    updateTimer() {
+        const targetDate = new Date(this.input.targetDate);
+        const now = new Date();
+        const difference = targetDate - now;
+
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        this.state = {
+            hours,
+            minutes,
+            seconds
+        };
+    }
+}

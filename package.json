@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "marko": "^5.33.5"
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "marko": "^5.33.5",
+    "webpack": "^5.93.0"
   },
   "devDependencies": {
     "@marko/run": "^0.4.3"
